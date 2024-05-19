@@ -1,0 +1,66 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Product Price Comparison</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span style="margin-right: 250px;">Product Price Comparison</span>
+            <img id="logo" src="p_scannerlogo.png" alt="" style="border-radius: 50%;height: 50px;" >
+
+        </h1>
+        
+        <form method="post" action="{{ url_for('index') }}">
+            <label for="product_name">Enter Product Name:</label>
+            <input type="text" id="product_name" name="product_name" required>
+            <button type="submit"><span style="font-size: 20px;">Compare Prices</span></button>
+        </form>
+
+        {% if product_name %}
+        <div class="product-info">
+            <h2 style="margin-left: 20px;">{{ product_name }}</h2>
+            <div class="details-container">
+                <div class="image-container">
+                    <img id="product-image" src="{{ amazon_image_link }}" alt="Product Image">
+                </div>
+                <div class="highlights-container">
+                    <h4 style="font-size: 20px;margin-left: 20px;">Features :</h4>
+                    <ul style="overflow: hidden;">
+                        {% for highlight in flipkart_highlights %}
+                            <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="price-info">
+                <div class="flipkart-info">
+                    <h3>Flipkart</h3>
+                    <p>Price: <span>{{ flipkart_price }}</span></p>
+                    <p>Ratings: {{ flipkart_rating }}<span style='font-size:20px;'> &#9733;</span></p>
+                    <p>Visit Flipkart: <a href="{{ flipkart_link }}" target="_blank">{{ product_name }} on Flipkart</a></p>
+                    <p>Check Price History Here : Please visit flipkart and paste product link here </p>
+                    <p><embed src="https://buyhatke.com/" type="text/html" width="700px" height="350px"></p>
+                </div>
+                <div class="amazon-info">
+                    <h3>Amazon</h3>
+                    <p>Price: <span>₹{{ amazon_price }}</span></p>
+                    <p>Ratings: {{ amazon_rating }}<span style='font-size:20px;'>&#9733;</span></p>
+                    <p>Visit Amazon: <a href="{{ amazon_link }}" target="_blank">{{ product_name }} on Amazon</a></p>
+
+                    <p>Check Price History Here : Please visit Amazon and paste product link here </p>
+                    <p> <embed src="https://buyhatke.com/" type="text/html" width="700px" height="350px"></p>
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

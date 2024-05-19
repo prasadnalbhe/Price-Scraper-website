@@ -1,0 +1,118 @@
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    padding-right: 0px;
+    width: 800px;
+    margin-right: 0px;
+}
+#id{
+    height: 300px;
+    width: 300px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+input {
+    width: calc(100% - 20px); /* Adjust input width to accommodate button */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+p{
+    margin: 20px;
+}
+button {
+    width: 200px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.details-container {
+    display: flex;
+}
+
+.image-container {
+    width: 150px; /* Set a fixed width for image */
+}
+
+#product-image {
+    width: 100%; /* make image full width of its container */
+    height: 250px;
+    display: block;
+    margin-left: 30px;
+}
+
+.highlights-container {
+    overflow: hidden;
+    width: 600px; /* Make highlights the same width as the image */
+    max-height: 240px; /* Max height to match the image height */
+    margin-left: 50px;
+    margin-top: 0px;
+    border-left: 1px solid #ccc; /* Adds a border between image and highlights */
+    padding-left: 10px; /* Spacing inside the highlights */
+}
+
+.highlights-container h4 {
+    margin-top: 0;
+}
+
+.highlights-container li {
+    list-style: disc; /* Removes bullet points */
+    margin: 5px 0;
+}
+
+.flipkart-info,
+.amazon-info {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.flipkart-info h3,
+.amazon-info h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
